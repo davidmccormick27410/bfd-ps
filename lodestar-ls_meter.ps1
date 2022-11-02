@@ -2,16 +2,9 @@
 $OracleDLLPath = "F:\downloads\Oracle.ManagedDataAccess.dll"
 
 #The oracle DataSource as you would compile it in TNSNAMES.ORA
-$datasource = "(DESCRIPTION =
-               (ADDRESS_LIST =
-               (ADDRESS = 
-               (PROTOCOL = TCP)
-               (HOST = hostingdb0p.its.unc.edu)(PORT = 1521)))
-               (CONNECT_DATA =
-               (SERVICE_NAME = ldstrprd.unc.edu)))"
-
-$username = "pwrline"
-$password = Get-Content C:\UNC\lodestar.txt
+$datasource = Get-Content C:\UNC\lodestar_ds.txt
+$username = Get-Content C:\UNC\lodestar_user.txt
+$password = Get-Content C:\UNC\lodestar_pw.txt
 
 $queryStatment = "SELECT uidmeter, meterid FROM meter" #Be careful not to terminate it with a semicolon, it doesn't like it
 
